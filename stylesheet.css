@@ -1,19 +1,182 @@
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto; 
+.header {
+  background-color:green;
+  color:white;
+  text-align:center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2px;
+  left:0;
+  right:0;
 }
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.parallax_front {
-    
-}
-.parallax_back {
-    
-}
+
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    transform-style: preserve-3d;
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--fore {
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .parallax__layer--base {
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .parallax__layer--back {
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+  .parallax__layer--deep {
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+
+  #group1 {
+    z-index: 5; /* slide over group 2 */
+  }
+  #group1 .parallax__layer--base {
+    background-image:url("https://www.wintersport-oostenrijk-vakantie.nl/wp-content/uploads/2013/07/skidorp-Ischgl.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+
+  }
+
+  #group2 {
+    z-index: 3; /* slide under groups 1 and 3 */
+  }
+  #group2 .parallax__layer--back {
+    background-image:url("http://www.skivakantie-zoeken.be/images/soldenoztalarenahochsoldendorp1000breed.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+  #group3 {
+    z-index: 4; /* slide over group 2 and 4 */
+  }
+  #group3 .parallax__layer--base {
+    background-image:url("http://www.skivakantie-zoeken.be/images/skigebieden/zillertalsnowboard1000breed.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+  #group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+  #group4 .parallax__layer--deep {
+    background-image:url("http://ski.brides-les-bains.com/images/info_pages/garantie-neige-brides-les-bains-meribel-3-vallees-64.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+  #group5 {
+    z-index: 3; /* slide over group 4 and 6 */
+  }
+  #group5 .parallax__layer--base {
+    background-image:url("http://www.antonerhof.at/uploads/tx_bh/St.Anton2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+  #group6 {
+    z-index: 2; /* slide under group 5 and 7 */
+  }
+  #group6 .parallax__layer--back {
+    background-image:url("http://foto.images-tiscover.com/fotos/0/3/1024/576/80/FFFFFF/http%3A%2F%2Ffoto-origin.images-tiscover.com%2Fat%2Fimages%2FSPF%2F68%2FSPF29768at%2Fbergbahnen-soelden-soelden-1z3e7.jpg/MraAigXrgSVSBz93ko5ZkQ%3D%3D/z/7/bergbahnen-soelden-soelden-1z3e7.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+  #group7 {
+    z-index: 3; 
+  }
+  #group7 .parallax__layer--base {
+    background-image:url("http://static1.bergfex.com/images/downsized/0f/0a2cad761b252b0f_b90bc549a402be6a.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+#group8 {
+    z-index: 4;
+  }
+
+  #group8 .parallax__layer--base {
+    background-image:url("http://cdn.snowplaza.nl//content/enarrablesphotos/1024x768/300201.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+#group9 {
+    z-index: 2; 
+  }
+  #group9 .parallax__layer--base {
+    background-image:url("https://www.livigno.eu/img/inverno/bg_introduzione.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+#groug10 {
+    z-index: 3; 
+  }
+  #group10 .parallax__layer--base {
+    background-image:url("https://cdn.wintersporters.nl/destinations/2/39949.jpg?w=1280");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+  }
+
+ body, html {
+    overflow: hidden;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+  .parallax {
+    font-size: 200%;
+  }
+
+
+  .title {
+    color:white;
+    font-size:2em;
+    text-shadow: -3px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
